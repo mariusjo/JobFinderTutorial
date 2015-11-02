@@ -1,0 +1,24 @@
+{
+  "name": "JobFinderTutorial",
+  "version": "0.0.0",
+  "homepage": "https://github.com/beardedTomato/JobFinderTutorial",
+  "authors": [
+    "Marius <mariusjohans@gmail.com>"
+  ],
+  "main": "server.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.14.3",
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5"
+  }
+}
