@@ -108,7 +108,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
   pushd "%DEPLOYMENT_TARGET%"
   rem echo Calling install bower
-  rem call :ExecuteCmd !NPM_CMD! install bower
+  call :ExecuteCmd !NPM_CMD! install bower
   rem IF !ERRORLEVEL! NEQ 0 goto error
   echo Calling bower install
   call :ExecuteCmd node_modules\.bin\bower install
