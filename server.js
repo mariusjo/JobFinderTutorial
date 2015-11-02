@@ -3,7 +3,13 @@ var app = express();
 
 app.set("view engine", "jade");
 
-app.use(express.static(__dirname + "\\public"));
+var staticdir = __dirname + "\\public"
+
+console.log("using " + staticdir);
+
+app.use(express.static(staticdir));
+
+
 
 var port = process.env.port || 1337;
 
