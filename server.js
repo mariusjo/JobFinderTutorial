@@ -3,7 +3,7 @@ var app = express();
 
 app.set("view engine", "jade");
 
-var staticdir = __dirname + "\\public"
+var staticdir = __dirname + "/public"
 
 console.log("using " + staticdir);
 
@@ -17,10 +17,4 @@ app.get("/", function (req, res) {
     res.render("index");
 });
 
-app.listen(port)
-
-//var http = require('http');
-//http.createServer(function (req, res) {
-//    res.writeHead(200, { 'Content-Type': 'text/plain' });
-//    res.end('Hello World\n');
-//}).listen(port);
+app.listen(port);
