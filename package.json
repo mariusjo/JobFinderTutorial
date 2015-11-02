@@ -1,0 +1,10 @@
+{
+  "name": "JobbFinderTutorial",
+  "version": "0.0.0",
+  "description": "JobbFinderTutorial",
+  "main": "server.js",
+  "author": {
+    "name": "marius",
+    "email": ""
+  }
+}
