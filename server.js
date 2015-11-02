@@ -1,6 +1,6 @@
 ﻿var express = require('express');
 var mongoose = require('mongoose');
-
+var jobController = require('./controllers/JobController.js')
 var app = express();
 
 app.set("view engine", "jade");
@@ -23,8 +23,15 @@ mongoose.connect('mongodb://localhost/jobfindertutorial');
 
 var con = mongoose.connection;
 
-con.once('open', function () {   
+con.once('open', function () {
     console.log("Successfully connnected to mongodb!");
+    jobController.seedJobs(function (err) {
+        if (err) {
+            //TODO
+            console.log("Seeding the db failed");
+        }
+        
+    });
 });
 
 
