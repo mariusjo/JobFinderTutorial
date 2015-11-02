@@ -1,0 +1,1 @@
+mongod -dbpath=C:\dev\projects\JobFinderTutorial\data --nojournal --httpinterface --rest
