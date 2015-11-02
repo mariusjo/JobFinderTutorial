@@ -5,8 +5,6 @@ app.set("view engine", "jade");
 
 var staticdir = __dirname + "/public"
 
-console.log("using " + staticdir);
-
 app.use(express.static(staticdir));
 
 

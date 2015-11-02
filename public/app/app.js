@@ -1,7 +1,7 @@
 ﻿(function (angular) {
     var appmodule = angular.module('appModule', []);
 
-    appmodule.controller("testCtrl", ["$scope"], function ($scope) {
+    appmodule.controller("testCtrl", ["$scope", function ($scope) {
         $scope.jobs = [
             {
                 title: "Programmer",
@@ -23,6 +23,6 @@
                 title: "Architect",
                 description: "Your name is Art Vandeley"
             }];
-    });
+    }]);
 
 })(window.angular);
