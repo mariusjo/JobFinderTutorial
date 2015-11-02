@@ -1,11 +1,16 @@
 ﻿doctype html
 html
   head
-    link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.min.css")
-    script( src="bower_components/angular/angular.min.js")
+    link(rel="stylesheet", href="lib/bootstrap/dist/css/bootstrap.min.css")
+    script( src="/lib/angular/angular.min.js")
     script( src="app/capp.js")
     title
   body
-    div(ng-app='app')
+    div(ng-app='appModule')
         .container
-            h1 Hello World
+            h1 Find a Job Today!
+            div(ng-controller='testCtrl')
+                .list-group
+                    a.list-group-item(href='#' ng-repeat="job in jobs")
+                        h4.list-group-item-heading {{job.title}}
+                        p.list-group-item-text {{job.description}}

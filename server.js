@@ -3,6 +3,8 @@ var app = express();
 
 app.set("view engine", "jade");
 
+app.use(express.static(__dirname + "\\public"));
+
 var port = process.env.port || 1337;
 
 app.get("/", function (req, res) {   
