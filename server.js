@@ -19,7 +19,10 @@ app.get("/", function (req, res) {
 
 controllers.init(app);
 
-mongoose.connect('mongodb://localhost/jobfindertutorial');
+var dbConnectionString = 'testingtesting:testingtesting@ds043971.mongolab.com:43971/jobfinder';
+//var dbConnectionString = 'mongodb://localhost/jobfindertutorial';
+
+mongoose.connect(dbConnectionString);
 
 var con = mongoose.connection;
 
