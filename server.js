@@ -1,6 +1,6 @@
 ﻿var express = require('express');
 var mongoose = require('mongoose');
-var jobController = require('./controllers/JobController.js')
+var controllers = require('./controllers/index.js');
 var app = express();
 
 app.set("view engine", "jade");
@@ -11,13 +11,13 @@ app.use(express.static(staticdir));
 
 var port = process.env.port || 1337;
 
-app.get("/api/jobs", function (req, res) {   
-    res.send("testingtesting");
-});
 
-app.get("*", function (req, res) {   
+
+app.get("/", function (req, res) {   
     res.render("index");
 });
+
+controllers.init(app);
 
 mongoose.connect('mongodb://localhost/jobfindertutorial');
 
@@ -25,13 +25,6 @@ var con = mongoose.connection;
 
 con.once('open', function () {
     console.log("Successfully connnected to mongodb!");
-    jobController.seedJobs(function (err) {
-        if (err) {
-            //TODO
-            console.log("Seeding the db failed");
-        }
-        
-    });
 });
 
 

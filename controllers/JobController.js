@@ -1,8 +1,37 @@
 ﻿(function (jobController) {
-    var JobModel = require('../models/job').Job;
-
+    var jobModel = require('../models/job').Job;
+    
+    jobController.init = function (app) {
+        
+        jobController.seedJobs(function (err) {
+        if (err) {
+            //TODO
+            console.log("Seeding the db failed");
+        }
+        
+    });
+        
+        
+        
+        app.get("/api/jobs", function (req, res) {
+            jobModel.find({}).lean().exec(function (err, jobs) {
+                if (err) {
+                    res.status(500).send("Server encountered an error");
+                } else {
+                    console.log(jobs);
+                    res.json(jobs);
+                }
+               
+            });    
+        });
+        
+        
+            
+    };
+    
+    
     jobController.seedJobs = function (next) {
-        JobModel.find({}).exec(function (err, collection) {
+        jobModel.find({}).exec(function (err, collection) {
             if (err) {
                 next(err);
             } if (collection.length === 0) {

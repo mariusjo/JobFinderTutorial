@@ -30,9 +30,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="data\database.js" />
-    <Compile Include="data\index.js" />
-    <Compile Include="data\Job.js" />
+    <Compile Include="controllers\index.js" />
+    <Compile Include="controllers\jobController.js" />
+    <Compile Include="models\job.js" />
     <Compile Include="gruntfile.js" />
     <Compile Include="public\app\app.js" />
     <Compile Include="server.js" />
@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
+    <Folder Include="controllers\" />
+    <Folder Include="models\" />
     <Folder Include="public\" />
     <Folder Include="public\lib\" />
     <Folder Include="public\app\" />
